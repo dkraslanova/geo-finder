@@ -6,28 +6,27 @@ $muted-text: #999;
 $border-radius-large: 8px;
 
 .breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    background-color: $secondary-color;
-    border-radius: $border-radius-large;
-    padding: 8px 12px;
-    gap: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  background-color: $secondary-color;
+  border-radius: $border-radius-large;
+  gap: 4px;
 }
 
 .breadcrumbItem {
-    color: $primary-color;
-    cursor: pointer;
-    font-weight: 500;
-    transition: color 0.2s;
+  color: $primary-color;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
 
-    &:hover {
-        color: $primary-hover;
-        text-decoration: underline;
-    }
+  &:hover {
+    color: $primary-hover;
+    text-decoration: underline;
+  }
 }
 
 .breadcrumbSeparator {
-    margin: 0 8px;
-    color: $muted-text;
+  margin: 0 8px;
+  color: $muted-text;
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Autocomplete, TextField, Box, Typography } from '@mui/material';
-import { LocationNode } from '../data/locationData';
-import { LEVEL_TYPE_NAMES } from '../data/constants';
-import styles from './SearchAutocomplete.module.scss';
+import React from "react";
+import { Autocomplete, TextField, Box, Typography } from "@mui/material";
+import { LocationNode } from "../data/locationData";
+import { LEVEL_TYPE_NAMES } from "../data/constants";
+import styles from "./SearchAutocomplete.module.scss";
 
 interface SearchAutocompleteProps {
   searchTerm: string;
@@ -22,31 +22,34 @@ const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
       freeSolo
       options={searchResults}
       getOptionLabel={(option) =>
-        typeof option === 'string' ? option : option.name
+        typeof option === "string" ? option : option.name
       }
       inputValue={searchTerm}
       onInputChange={(event, newInputValue) => {
         onSearchTermChange(newInputValue);
       }}
       onChange={(event, newValue) => {
-        if (newValue && typeof newValue !== 'string') {
+        if (newValue && typeof newValue !== "string") {
           onResultSelect(newValue);
         }
       }}
-      renderOption={(props, option) => (
-        <Box component="li" {...props}>
-          <Box className={styles.searchResultItem}>
-            <Typography className={styles.searchResultName} variant="body1">
-              {option.name}
-            </Typography>
-            <Box className={styles.searchResultInfo}>
-              <Typography variant="caption" color="text.secondary">
-                {LEVEL_TYPE_NAMES[option.level]}
+      renderOption={(props, option) => {
+        const { key, ...restProps } = props;
+        return (
+          <Box component="li" key={key} {...restProps}>
+            <Box className={styles.searchResultItem}>
+              <Typography className={styles.searchResultName} variant="body1">
+                {option.name}
               </Typography>
+              <Box className={styles.searchResultInfo}>
+                <Typography variant="caption" color="text.secondary">
+                  {LEVEL_TYPE_NAMES[option.level]}
+                </Typography>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      )}
+        );
+      }}
       renderInput={(params) => (
         <TextField
           {...params}
@@ -56,7 +59,7 @@ const SearchAutocomplete: React.FC<SearchAutocompleteProps> = ({
           size="small"
         />
       )}
-      sx={{ width: '100%' }}
+      sx={{ width: "100%" }}
     />
   );
 };

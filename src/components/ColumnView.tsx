@@ -1,8 +1,8 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
-import { LocationNode } from '../data/locationData';
-import { LEVEL_NAMES } from '../data/constants';
-import styles from './ColumnView.module.scss';
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import { LocationNode } from "../data/locationData";
+import { LEVEL_NAMES } from "../data/constants";
+import styles from "./ColumnView.module.scss";
 
 interface ColumnViewProps {
   level: number;
@@ -17,7 +17,6 @@ const ColumnView: React.FC<ColumnViewProps> = ({
   selectedItem,
   onItemDoubleClick,
 }) => {
-  // Ak nie sú žiadne položky, nezobrazujeme nič
   if (items.length === 0) {
     return null;
   }
@@ -30,7 +29,7 @@ const ColumnView: React.FC<ColumnViewProps> = ({
           <Box
             key={node.id}
             className={`${styles.columnItem} ${
-              selectedItem?.id === node.id ? styles.selected : ''
+              selectedItem?.id === node.id ? styles.selected : ""
             }`}
             onDoubleClick={() => onItemDoubleClick(node)}
           >
