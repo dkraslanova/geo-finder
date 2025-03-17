@@ -1,0 +1,69 @@
+// Premenné
+$primary-color: #3498db;
+$border-color: #ddd;
+$light-border: #eee;
+$muted-text: #999;
+$hover-bg: #f0f7ff;
+$selected-bg: #e6f2ff;
+
+.column {
+  min-width: 250px;
+  max-width: 33.3%;
+  flex: 1;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+}
+
+.columnHeader {
+  padding: 12px 15px;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 1px solid $border-color;
+  text-align: center;
+}
+
+.columnContent {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.columnItem {
+  padding: 10px 15px;
+  border-bottom: 1px solid $light-border;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+
+  &.selected {
+    background-color: $selected-bg;
+    font-weight: bold;
+  }
+}
+
+.columnItemName {
+  flex: 1;
+}
+
+.emptyColumn {
+  padding: 20px;
+  text-align: center;
+  color: $muted-text;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
