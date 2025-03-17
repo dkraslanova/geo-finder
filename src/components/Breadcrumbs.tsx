@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
-import { LocationNode } from '../data/locationData';
-import styles from './Breadcrumbs.module.scss';
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import { LocationNode } from "../data/locationData";
+import styles from "./Breadcrumbs.module.scss";
 
 interface BreadcrumbsProps {
   breadcrumbs: LocationNode[];
